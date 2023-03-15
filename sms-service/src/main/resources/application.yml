@@ -1,0 +1,14 @@
+server:
+  port: 8083
+jdwx:
+  url: https://way.jd.com/chonry/smsapi
+  appkey: 95223981f663c3bb3b18e56e88b0c628
+  sign: 【MSShop】
+  # sign 必须加【】，否则会报错
+spring:
+  application:
+    name: sms-service
+  redis:
+    database: 0
+    host: 192.168.133.10
+    port: 6379

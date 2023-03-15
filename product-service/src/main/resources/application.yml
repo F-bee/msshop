@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/msshop?serverTimezone=GMT%2b8
+    username: root
+    password: 123456
+  application:
+    name: product-service
+mybatis-plus: # 打印sql语句
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:xml/*.xml
+#  mapper-locations: classpath*:**/mapper/xml/*Mapper.xml
+#  mapper-locations: com/kk/mapper/xml/*.xml

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.mapper.OrderMasterMapper">
+    <update id="updateOrderStatus">
+        update order_master set order_status = #{param3} where buyer_openid = #{param1} and order_id = #{param2}
+    </update>
+    <update id="updateOrderStatus2">
+        update order_master set order_status = #{param2} where order_id = #{param1}
+    </update>
+    <update id="pay">
+        update order_master set pay_status = 1 where buyer_openid = #{param1} and order_id = #{param2}
+    </update>
+
+    <select id="getOrderStatus" resultType="java.lang.Integer">
+        select order_status from order_master where buyer_openid = #{param1} and order_id = #{param2}
+    </select>
+
+    <select id="getOrderStatus2" resultType="java.lang.Integer">
+        select order_status from order_master where order_id = #{orderId}
+    </select>
+    <select id="getPayStatus" resultType="java.lang.Integer">
+        select pay_status from order_master where buyer_openid = #{param1} and order_id = #{param2}
+    </select>
+
+</mapper>
